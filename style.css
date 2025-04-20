@@ -193,6 +193,7 @@ footer {
 .inscricao-banner {
   height: 50vh;
   background: url('banner-inscricao.jpg') center/cover no-repeat;
+  padding-top: 80px; /* empurra o conteúdo pra baixo do header */
 }
 
 .formulario {
