@@ -13,10 +13,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="horarios.html">Horários</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li><a href="inscricao.html">Inscrição</a></li>
       </ul>
     </nav>
   </header>
@@ -31,19 +32,21 @@
       <input type="text" name="nome" placeholder="Nome completo" required />
       <input type="tel" name="telefone" placeholder="Telefone com DDD" required />
       <input type="email" name="email" placeholder="E-mail" required />
-      
+
       <label class="checkbox">
         <input type="checkbox" name="termos" required />
-        Aceito os <a href="#">termos e condições</a> <span style="font-size: 0.8rem;"></span>
+        Aceito os <a href="#">termos e condições</a> <span style="font-size: 0.8rem;">(em construção)</span>
       </label>
 
       <button type="submit">Enviar inscrição</button>
     </form>
 
     <div class="mensagem-sucesso" style="display:none;">
-      <p>Obrigado pela inscrição! Em até 24h entraremos em contato. Você também pode finalizar diretamente na academia:</p>
-      <p><strong>Endereço:</strong> Av. W14 – Nº 61, Lagomar, Macaé/RJ<br>
-      <strong>Telefone:</strong> (22) 99827-0893</p>
+      <h3>✅ Obrigado pela inscrição!</h3>
+      <p>Em até 24h entraremos em contato.</p>
+      <p>Você também pode finalizar sua matrícula presencialmente na academia:</p>
+      <p><strong>📍 Endereço:</strong> Av. W14 – Nº 61, Lagomar, Macaé/RJ<br>
+         <strong>📞 Telefone:</strong> (22) 99827-0893</p>
     </div>
   </section>
 
@@ -58,6 +61,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(form);
+
       fetch(form.action, {
         method: 'POST',
         body: data,
@@ -69,6 +73,8 @@
         } else {
           alert('Erro no envio. Tente novamente.');
         }
+      }).catch(() => {
+        alert('Erro de conexão. Por favor, tente mais tarde.');
       });
     });
   </script>
