@@ -53,11 +53,24 @@ nav a {
   z-index: 1;
 }
 
-/* Banner da página de INSCRIÇÃO */
+/* ✅ Banner da página de INSCRIÇÃO (corrigido) */
 .inscricao-banner {
   height: 60vh;
-  background: url('banner-inscricao.jpg') center/cover no-repeat;
-  margin-top: 120px; /* espaço abaixo do header fixo */
+  background: url('banner-inscricao.jpg') center center / contain no-repeat;
+  background-color: #000;
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔽 Responsivo */
+@media (max-width: 768px) {
+  .inscricao-banner {
+    height: 40vh;
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 .overlay {
@@ -168,9 +181,11 @@ footer {
 .formulario button:hover {
   background-color: #00cc57;
 }
+
 main, section:first-of-type {
   margin-top: 120px; /* espaço abaixo do header fixo */
 }
+
 .mensagem-sucesso {
   background-color: #111;
   padding: 2rem;
@@ -194,4 +209,22 @@ main, section:first-of-type {
   font-size: 1rem;
   margin: 0.5rem 0;
   color: #eee;
+}
+
+.video-sobre {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.video-sobre h2 {
+  color: #00ff6e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.video-sobre video {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 110, 0.2);
 }
