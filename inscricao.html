@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscrição - Academia Pró Saúde</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo-pro-saude.png" alt="Logo Pró Saúde" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="inscricao.html">Inscrição</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="formulario">
+    <h2>Venha fazer parte da Pró Saúde!</h2>
+    <p>Preencha seus dados e entraremos em contato em até 24h.<br>Você também pode finalizar sua inscrição presencialmente.</p>
+
+    <form id="form-inscricao" action="https://formspree.io/f/moqgakgj" method="POST">
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="tel" name="telefone" placeholder="Telefone com DDD" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      
+      <label class="checkbox">
+        <input type="checkbox" name="termos" required />
+        Aceito os <a href="#">termos e condições</a> <span style="font-size: 0.8rem;">(em construção)</span>
+      </label>
+
+      <button type="submit">Enviar inscrição</button>
+    </form>
+
+    <div class="mensagem-sucesso" style="display:none;">
+      <p>Obrigado pela inscrição! Em até 24h entraremos em contato. Você também pode finalizar diretamente na academia:</p>
+      <p><strong>Endereço:</strong> Av. W14 – Nº 61, Lagomar, Macaé/RJ<br>
+      <strong>Telefone:</strong> (22) 99827-0893</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Academia Pró Saúde - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-inscricao');
+    const msg = document.querySelector('.mensagem-sucesso');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          msg.style.display = 'block';
+        } else {
+          alert('Erro no envio. Tente novamente.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
