@@ -190,3 +190,66 @@ footer {
   border-top: 2px solid #00ff6e;
   margin-top: 2rem;
 }
+.inscricao-banner {
+  height: 50vh;
+  background: url('banner-inscricao.jpg') center/cover no-repeat;
+}
+
+.formulario {
+  max-width: 600px;
+  margin: -4rem auto 4rem;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.formulario h2 {
+  color: #00ff6e;
+  margin-bottom: 1rem;
+}
+
+.formulario p {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"] {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.formulario .checkbox {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.formulario .checkbox input {
+  margin-right: 0.5rem;
+}
+
+.formulario button {
+  background-color: #00ff6e;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #00cc57;
+}
