@@ -37,7 +37,7 @@ nav a {
 
 .banner {
   height: 100vh;
-  background: url('banner.jpg') center/cover no-repeat;
+  background: url('banner-novo.png') center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
