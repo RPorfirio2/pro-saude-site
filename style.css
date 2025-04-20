@@ -168,3 +168,6 @@ footer {
 .formulario button:hover {
   background-color: #00cc57;
 }
+main, section:first-of-type {
+  margin-top: 120px; /* espaço abaixo do header fixo */
+}
